@@ -212,8 +212,8 @@ for csv_file in csv_files:
                 #Tìm Và Insert NXB
                 publisher_id = ''
                 if publisher is not None:
-                    sql_find_publisher = "SELECT pub_id FROM publisher WHERE pub_name = %s LIMIT 1"
-                    mycursor.execute(sql_find_publisher, (publisher,))
+                    sql_find_publisher = "SELECT pub_id FROM publisher WHERE pub_sid = %s LIMIT 1"
+                    mycursor.execute(sql_find_publisher, (slugify(publisher),))
                     result = mycursor.fetchone()
 
                     if result is None:
@@ -237,8 +237,8 @@ for csv_file in csv_files:
                 #Tìm và Insert Subplier
                 supplier_id = ''
                 if supplier is not None:
-                    sql_find_supplier = "SELECT sup_id FROM supplier WHERE sup_name = %s LIMIT 1"
-                    mycursor.execute(sql_find_supplier, (supplier,))
+                    sql_find_supplier = "SELECT sup_id FROM supplier WHERE sup_sid = %s LIMIT 1"
+                    mycursor.execute(sql_find_supplier, (slugify(supplier),))
                     result = mycursor.fetchone()
 
                     if result is None:
