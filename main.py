@@ -158,8 +158,6 @@ for index, row in df.iterrows():
                     if result is not None:
                         authors.append(result[0])
 
-                    print("author::", result)
-
                     #Insert author nếu không tìm thấy
                     if result is None:
                         author_data = {
