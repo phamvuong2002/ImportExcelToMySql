@@ -155,25 +155,29 @@ for csv_file in csv_files:
                     sql_cate1 = "SELECT  cate1_id FROM category_1 WHERE cate1_name = %s LIMIT 1"
                     mycursor.execute(sql_cate1, (cate0,))
                     result = mycursor.fetchone()
-                    categoties.append(result[0])
+                    if result is not None:
+                        categoties.append(result[0])
 
                     if cate1 is not None:
                         sql_cate2 = "SELECT cate2_id FROM category_2 WHERE cate2_name = %s LIMIT 1"
                         mycursor.execute(sql_cate2, (cate1,))
                         result = mycursor.fetchone()
-                        categoties.append(result[0])
+                        if result is not None:
+                            categoties.append(result[0])
 
                         if cate2 is not None:
                             sql_cate3 = "SELECT cate3_id FROM category_3 WHERE cate3_name = %s LIMIT 1"
                             mycursor.execute(sql_cate3, (cate2,))
                             result = mycursor.fetchone()
-                            categoties.append(result[0])
+                            if result is not None:
+                                categoties.append(result[0])
 
                             if cate3 is not None:
                                 sql_cate4 = "SELECT cate4_id FROM category_4 WHERE cate4_name = %s LIMIT 1"
                                 mycursor.execute(sql_cate4, (cate3,))
                                 result = mycursor.fetchone()
-                                categoties.append(result[0])
+                                if result is not None:
+                                    categoties.append(result[0])
 
                 # Tìm Và Insert Tác Giả
                 authors = []
