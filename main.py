@@ -48,9 +48,11 @@ def create_categories_string(A, B, C, D):
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
+  port="3306",
   password="vuong",
   database="books_db_v1"
 )
+
 
 # Tạo một đối tượng cursor để thực hiện các truy vấn SQL
 mycursor = mydb.cursor()
